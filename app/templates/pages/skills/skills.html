@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block title %}О себе{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/skills/skills.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h2>О себе</h2>
+        <p>Подробное описание вашего опыта, навыков и интересов.</p>
+    </div>
+
+    <div class="container">
+        <h2>Навыки</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for skill in skills %}
+                    <tr>
+                        <td>{{ skill.name }}</td>
+                        <td>{{ skill.description }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

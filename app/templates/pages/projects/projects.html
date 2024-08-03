@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+{% block title %}Мои Проекты{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/projects/projects.css') }}">
+{% endblock %}
+{% block scripts %}
+    <script>
+        function toProject(project_id) {
+            location.href = '/projects/' + project_id;
+        }
+    </script>
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="title">
+            <h1>Принимал участие в проектах</h1>
+        </div>
+
+
+        <div class="project-gallery">
+
+            {% for pr in projects %}
+                <div class="project-card-large">
+                    <div class="card-container" onclick="toProject({{ pr.id }})">
+                        <div class="left-block">
+                            <div class="image">
+                                <img src="{{ url_for('static', filename=pr.image) }}" alt="{{ pr.title }}">
+                            </div>
+                        </div>
+                        <div class="right-block">
+                            <div class="title">
+                                <h2>{{ pr.title }}</h2>
+                            </div>
+                            <div class="description">
+                                <p>{{ pr.short_description }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+{% endblock %}
+

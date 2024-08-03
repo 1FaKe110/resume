@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% block title %}О себе{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/home/home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="about-me">
+            <div class="photo">
+                <img src="{{ url_for('static', filename='images/home-Photoroom.png') }}" alt="Фотография">
+            </div>
+            <div class="description-block">
+                <div class="description">
+                    <div class="title">
+                        <h1>О себе</h1>
+                    </div>
+                    <div class="text">
+                        <p>Я — Python-разработчик, предпочитающий создавать практичные решения.</p>
+                        <p>C опытом в разработке телеграм-ботов, автоматических тестов и веб-сайтов позволяет мне
+                            эффективно
+                            решать задачи и повышать производительность.</p>
+                        <p>Также я заинтересован в разработке CRM-систем и уверен, что мои знания и навыки
+                            программирования
+                            будут полезны вашей команде.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

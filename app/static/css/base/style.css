@@ -1,0 +1,120 @@
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: #282c34; /* Dark background */
+    color: #fff; /* White text */
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: #20232770;
+    backdrop-filter: blur(10px);
+    position: relative;
+    width: 60%;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.navbar a {
+    position: relative;
+    color: #b4bacb;
+    text-decoration: none;
+    padding: 10px 10px;
+    transition: all 0.7s ease-in-out;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 30%;
+}
+
+.navbar a:hover {
+    color: #eaedef;
+    background-color: #414852; /* Lighten on hover */
+    border-bottom: 1px solid #525a64; /* White border on hover */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #20232770;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+/* уведомления */
+
+.flash {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2rem;
+
+    width: fit-content;
+    height: 34px;
+    margin: 20px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    color: #fff;
+    text-wrap: avoid;
+    text-decoration: none;
+    text-align: center;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: showDiv 8s forwards;
+    transition: .5s ease-in-out;
+    backdrop-filter: blur(2px);
+}
+
+@keyframes showDiv {
+    0%, 5% {
+        opacity: 0;
+    }
+    5%, 80% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.error_outline {
+    background: #af4c4c;
+}
+
+.info_outline {
+    background: #4c7aaf;
+}
+
+.done {
+    background: #4caf50;
+}
+
+.priority_high {
+    background: #a5af4c;
+}
